@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+input,
+select {
+  &:focus {
+    outline: none;
+  }
+}
+.nav {
+  z-index: 1;
+  ul {
+    li {
+      &:hover {
+        color: #fb2e86;
+        transition: ease-in-out 0.2s;
+      }
+    }
+  }
+}
+.collectionCard {
+  h1 {
+    line-height: 50px;
+    letter-spacing: 1px;
+  }
+  .colection-bolb {
+    z-index: -1;
+  }
+  .collection-image {
+    z-index: 1;
+  }
+}
+.cart-btn,
+.magnify-btn,
+.favourite-btn {
+  cursor: pointer;
+}
+
+@media (max-width: 769px) {
+  .nav {
+    .nav-contact {
+      .nav-contact-wrap {
+        width: 100%;
+        padding: 0px 10px;
+        .email p,
+        .phone p {
+          font-size: 12px;
+        }
+        .languages-wrap,
+        .currency-wrap {
+          display: none;
+        }
+      }
+    }
+
+    .nav-links {
+      .nav-links-wrap {
+        width: 100%;
+        padding: 0px 10px;
+        .brand-name {
+          font-size: 20px;
+        }
+        .nav-lists {
+          display: none;
+        }
+      }
+    }
+  }
+  .collectionCard {
+    height: 80vh;
+    .carouel-add-img {
+      width: 80px;
+    }
+
+    .collection-wrap {
+      height: 80vh;
+      width: 100%;
+      flex-direction: column-reverse;
+
+      .collection-details {
+        padding: 20px 10px;
+
+        h1 {
+          font-size: 20px;
+          line-height: 25px;
+        }
+
+        .collection-decription {
+          margin: 10px 0px;
+        }
+      }
+
+      .collection-image-wrap {
+        width: 100%;
+        height: 50%;
+        .collection-image {
+          img {
+            width: 270px;
+          }
+        }
+        .colection-bolb {
+          width: 220px;
+          height: 220px;
+        }
+      }
+    }
+  }
+}
+
+// a {
+//   &:hover {
+//   }
+// }
+
+// body {
+// }
+
+// h1 {
+// }
+
+// button {
+//   &:hover {
+//   }
+//   &:focus,
+//   &:focus-visible {
+//   }
+// }
+
+// @media (prefers-color-scheme: light) {
+// }
