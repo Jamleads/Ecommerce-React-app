@@ -12,6 +12,7 @@ const ProductCard1 = ({
   style,
   detailsHeight,
   imageHeight,
+  onClickCart,
 }) => {
   return (
     <div className={`w-[100%] shadow-lg ${herf} ${style}`}>
@@ -21,7 +22,10 @@ const ProductCard1 = ({
         <img src={image} alt="product-img" />
 
         <div className="absolute bottom-0 left-0 flex flex-col items-center justify-center gap-2 lg:opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="cart-btn h-[30px] w-[30px] flex items-center justify-center rounded-full hover:bg-pink ease-in duration-300">
+          <div
+            className="cart-btn h-[30px] w-[30px] flex items-center justify-center rounded-full hover:bg-pink ease-in duration-300"
+            onClick={onClickCart}
+          >
             <img src={cartIcon} alt="cart-icon2" />
           </div>
 

@@ -1,15 +1,16 @@
 import React from "react";
 import Carousel from "./Carousel";
 import ProductCard1 from "./ProductCard1";
-import productImg from "/assets/product-img.svg";
 import Cart from "./Cart";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import CarouselCard from "./CarouselCard";
+import { useDispatch } from "react-redux";
+import { add } from "../store/cartSlice";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [products, getProduct] = useState([]);
-
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -18,6 +19,20 @@ const Home = () => {
         console.log(data);
       });
   }, []);
+
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    // dispatch an add action
+    dispatch(add(product));
+    showToast("Item successfully added to cart!");
+  };
+  const showToast = (message) => {
+    toast.success(message, {
+      position: "top-center",
+      autoClose: 3000, // Close the notification after 2 seconds
+      hideProgressBar: false,
+    });
+  };
 
   return (
     <div>
@@ -32,11 +47,14 @@ const Home = () => {
                 style={``}
                 imageHeight="h-[200px]"
                 detailsHeight="h-[150px]"
+                onClickCart={() => addToCart(product)}
               />
             </div>
           ))}
         </div>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };

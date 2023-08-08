@@ -7,7 +7,7 @@ import favouritesIcon from "/assets/favourite-icon.svg";
 import cartIcon from "/assets/cart-icon.svg";
 import searchIcon from "/assets/search-icon.svg";
 import Home from "./Home";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -139,10 +139,6 @@ const Nav = () => {
           </div>
         </div>
       </div>
-
-      <main className="mt-[124px]">
-        <Outlet />
-      </main>
     </>
   );
 };
