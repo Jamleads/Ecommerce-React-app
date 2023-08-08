@@ -24,7 +24,7 @@ const Home = () => {
       <Carousel />
 
       <div className="lg:w-[70%] mx-auto my-20">
-        <div className="lg:px-0 px-5 grid lg:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10">
+        <div className="lg:px-0 px-5 grid lg:grid-cols-4 grid-cols-2 gap-x-5 gap-y-10">
           {products.map((product) => (
             <div key={product.id}>
               <ProductCard1
