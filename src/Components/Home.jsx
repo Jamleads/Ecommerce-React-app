@@ -1,8 +1,6 @@
 import React from "react";
 import Carousel from "./Carousel";
 import ProductCard1 from "./ProductCard1";
-import Cart from "./Cart";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { add } from "../store/cartSlice";
@@ -10,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
+  // Fetching data
   const [products, getProduct] = useState([]);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -20,19 +19,27 @@ const Home = () => {
       });
   }, []);
 
+  // Add to cart function
   const dispatch = useDispatch();
   const addToCart = (product) => {
     // dispatch an add action
     dispatch(add(product));
     showToast("Item successfully added to cart!");
   };
+
+  // Add to cart alert message
   const showToast = (message) => {
     toast.success(message, {
       position: "top-center",
       autoClose: 3000, // Close the notification after 2 seconds
-      hideProgressBar: false,
+      hideProgressBar: true,
     });
   };
+
+  // Add to favourites
+  // const addToFavourite = (product) => {
+  //   dispatch(add2(product));
+  // };
 
   return (
     <div>
@@ -48,6 +55,7 @@ const Home = () => {
                 imageHeight="h-[200px]"
                 detailsHeight="h-[150px]"
                 onClickCart={() => addToCart(product)}
+                onClickFavourite={() => addToFavourite(product)}
               />
             </div>
           ))}

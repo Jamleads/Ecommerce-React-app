@@ -6,10 +6,12 @@ import phoneIcon from "/assets/phone-icon.svg";
 import favouritesIcon from "/assets/favourite-icon.svg";
 import cartIcon from "/assets/cart-icon.svg";
 import searchIcon from "/assets/search-icon.svg";
-import Home from "./Home";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
+  const cartProducts = useSelector((state) => state.cart);
+
   return (
     <>
       <div className="nav w-full fixed top-0 left-0 right-0 left-0">
@@ -88,7 +90,12 @@ const Nav = () => {
               <Link to="/cart">
                 <div className="cart-wrap flex items-center">
                   <p className="text-offWhite text-base">Cart</p>
-                  <img src={cartIcon} alt="cart-icon" className="ml-2" />
+                  <div className="relative h-full w-[30px] flex items-center justify-center">
+                    <p className="absolute -top-2 right-0 px-1 ml-2 text-pink text-xs bg-[#2F1AC4] font-bold ">
+                      {cartProducts.length}
+                    </p>
+                    <img src={cartIcon} alt="cart-icon" className="" />
+                  </div>
                 </div>
               </Link>
             </div>

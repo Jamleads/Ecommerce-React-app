@@ -13,6 +13,7 @@ const ProductCard1 = ({
   detailsHeight,
   imageHeight,
   onClickCart,
+  onClickFavourite,
 }) => {
   return (
     <div className={`w-[100%] shadow-lg ${herf} ${style}`}>
@@ -29,7 +30,10 @@ const ProductCard1 = ({
             <img src={cartIcon} alt="cart-icon2" />
           </div>
 
-          <div className="favourite-btn h-[30px] w-[30px] flex items-center justify-center rounded-full hover:bg-pink ease-in duration-300">
+          <div
+            className="favourite-btn h-[30px] w-[30px] flex items-center justify-center rounded-full hover:bg-pink ease-in duration-300"
+            onClick={onClickFavourite}
+          >
             <img src={favouritesIcon} alt="favourite-icon2" />
           </div>
 
