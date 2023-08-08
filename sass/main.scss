@@ -45,6 +45,10 @@ select {
 .favourite-btn {
   cursor: pointer;
 }
+.btn {
+  cursor: pointer;
+  transition: ease-in 0.3s;
+}
 
 @media (max-width: 769px) {
   .nav {

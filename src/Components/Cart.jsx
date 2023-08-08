@@ -1,20 +1,45 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Shocase from "./Showcase";
+import ProductCart2 from "./ProductCart2";
 
 const Cart = () => {
   const productCart = useSelector((state) => state.cart);
+  console.log(productCart);
   return (
-    <div>
-      <div className="text-3xl">Product Cart will be here</div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores
-        cumque nostrum repudiandae, ut voluptatum beatae corrupti molestiae
-        itaque eum sapiente architecto. Quaerat dolorem nesciunt omnis
-        reiciendis totam porro ipsa!
-      </p>
+    <>
+      <Shocase pageTitle="Shoping Cart" />
 
-      {JSON.stringify(productCart)}
-    </div>
+      <section className="lg:w-[70%] mx-auto mt-32 lg:flex gap-10 h-[50vh]">
+        <div className="lg:w-2/3 left">
+          <div className="flex items-center lg:mb-8">
+            <div className="product-side w-2/5 lg:text-lg text-[#101750] font-bold">
+              Products
+            </div>
+
+            <div className="price-side w-3/5 flex item-center justify-between text-start">
+              <div className="w-1/3 lg:text-lg text-[#101750] font-bold">
+                Price
+              </div>
+              <div className="w-1/3 lg:text-lg text-[#101750] font-bold">
+                Quantity
+              </div>
+              <div className="w-1/3 lg:text-lg text-[#101750] font-bold">
+                Total
+              </div>
+            </div>
+          </div>
+
+          {productCart.map((product) => (
+            <div key={product.id}>
+              <ProductCart2 {...product} />
+            </div>
+          ))}
+        </div>
+
+        <div className="lg:w-1/3 bg-green-300"></div>
+      </section>
+    </>
   );
 };
 
