@@ -92,7 +92,7 @@ const Nav = () => {
                   <p className="text-offWhite text-base">Cart</p>
                   <div className="relative h-full w-[30px] flex items-center justify-center">
                     <p className="absolute -top-2 right-0 px-1 ml-2 text-pink text-xs bg-[#2F1AC4] font-bold ">
-                      {cartProducts.length}
+                      {!cartProducts.length >= 1 ? "" : cartProducts.length}
                     </p>
                     <img src={cartIcon} alt="cart-icon" className="" />
                   </div>

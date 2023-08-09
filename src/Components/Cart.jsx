@@ -37,11 +37,9 @@ const Cart = () => {
             </div>
           ))}
 
-          <div className="total-order">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis,
-            vel. Nam omnis incidunt, quidem consequuntur reiciendis animi ea
-            ducimus cumque suscipit ullam veniam, consequatur doloremque aperiam
-            possimus facilis cum quo!
+          <div className="cart-btns flex items-center justify-between my-5">
+            <Button buttonText="Update Cart" />
+            <Button buttonText="Clear Cart" />
           </div>
         </div>
 
@@ -68,7 +66,7 @@ const Cart = () => {
                 </p>
               </div>
 
-              <div></div>
+              <div>{/* visa, mastercard and so on.... */}</div>
 
               <Button
                 style="w-full bg-[#19D16F] mt-10 mb-5"
