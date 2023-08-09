@@ -46,7 +46,7 @@ const ProductCard1 = ({
       <div
         className={`product-details group flex flex-col items-center justify-center bg-mainWhite hover:bg-[#2F1AC4] ease-in duration-300 lg:px-5 ${detailsHeight}`}
       >
-        <h3 className="product-title text-pink text-sm text-center h-[25px] overflow-hidden">
+        <h3 className="product-title text-pink text-sm text-center h-[20px] overflow-hidden">
           {title}
         </h3>
 

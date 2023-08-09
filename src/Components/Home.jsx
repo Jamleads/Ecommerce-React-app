@@ -2,21 +2,26 @@ import React from "react";
 import Carousel from "./Carousel";
 import ProductCard1 from "./ProductCard1";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "../store/cartSlice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getProducts } from "../store/productSlice";
 
 const Home = () => {
-  // Fetching data
-  const [products, getProduct] = useState([]);
+  // const [products, getProduct] = useState([]);
+
+  const { data: products } = useSelector((state) => state.products);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        getProduct(data);
-        console.log(data);
-      });
+    // dispatch data fetched asynchronously
+    dispatch(getProducts());
+
+    // fetch("https://fakestoreapi.com/products")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     getProduct(data);
+    //     console.log(data);
+    //   });
   }, []);
 
   // Add to cart function
@@ -24,14 +29,14 @@ const Home = () => {
   const addToCart = (product) => {
     // dispatch an add action
     dispatch(add(product));
-    showToast("Item successfully added to cart!");
+    showAddToast("Item successfully added to cart!");
   };
 
   // Add to cart alert message
-  const showToast = (message) => {
+  const showAddToast = (message) => {
     toast.success(message, {
       position: "top-center",
-      autoClose: 3000, // Close the notification after 2 seconds
+      autoClose: 2000,
       hideProgressBar: true,
     });
   };

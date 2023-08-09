@@ -5,6 +5,7 @@ import ProductCart2 from "./ProductCart2";
 import Button from "./Button";
 import { useDispatch } from "react-redux";
 import { remove } from "../store/cartSlice";
+import { toast, ToastContainer } from "react-toastify";
 
 const Cart = () => {
   const productCart = useSelector((state) => state.cart);
@@ -14,7 +15,15 @@ const Cart = () => {
 
   const removeFromCart = (id) => {
     dispatch(remove(id));
-    console.log("working");
+    showRemoveToast("Item successfully removed from cart!");
+  };
+
+  const showRemoveToast = (message) => {
+    toast.success(message, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
   };
 
   return (
@@ -96,6 +105,8 @@ const Cart = () => {
           </div>
         </div>
       </section>
+
+      <ToastContainer />
     </>
   );
 };
