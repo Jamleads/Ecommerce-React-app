@@ -3,10 +3,20 @@ import { useSelector } from "react-redux";
 import Shocase from "./Showcase";
 import ProductCart2 from "./ProductCart2";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { remove } from "../store/cartSlice";
 
 const Cart = () => {
   const productCart = useSelector((state) => state.cart);
   console.log(productCart);
+
+  const dispatch = useDispatch();
+
+  const removeFromCart = (id) => {
+    dispatch(remove(id));
+    console.log("working");
+  };
+
   return (
     <>
       <Shocase pageTitle="Shoping Cart" />
@@ -33,12 +43,15 @@ const Cart = () => {
 
           {productCart.map((product) => (
             <div key={product.id}>
-              <ProductCart2 {...product} />
+              <ProductCart2
+                {...product}
+                onClick={() => removeFromCart(product.id)}
+              />
             </div>
           ))}
 
           <div className="cart-btns flex items-center justify-between my-5">
-            <Button buttonText="Update Cart" />
+            <Button buttonText="Update Cart" to="/" />
             <Button buttonText="Clear Cart" />
           </div>
         </div>
@@ -50,7 +63,7 @@ const Cart = () => {
             </h1>
 
             <div className="items-total p-5 mt-10 bg-[#F4F4FC]">
-              <div className="flex items-center justify-between py-5 border-b-4 border-[#E8E6F1]">
+              <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
                 <p className="lg:text-lg text-[#101750] text-bold">
                   Item's total: <span>(5)</span>
                 </p>
@@ -59,10 +72,17 @@ const Cart = () => {
                 </p>
               </div>
 
-              <div className="flex items-center justify-between py-5 border-b-4 border-[#E8E6F1]">
+              <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
                 <p className="lg:text-lg text-[#101750] text-bold">Fees:</p>
                 <p className="lg:text-lg text-[#101750] text-bold">
                   $<span>10</span>
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
+                <p className="lg:text-lg text-[#101750] text-bold">Total:</p>
+                <p className="lg:text-lg text-[#101750] text-bold">
+                  $<span>4010</span>
                 </p>
               </div>
 

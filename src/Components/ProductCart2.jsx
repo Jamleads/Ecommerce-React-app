@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ProductCart2 = ({ image, title, price }) => {
+const ProductCart2 = ({ image, title, price, onClick }) => {
   const [count, setCount] = useState(1);
   let singlePrice = price;
   const totalPrice = count * price;
@@ -12,7 +12,10 @@ const ProductCart2 = ({ image, title, price }) => {
         <div className="product-img-wrap w-[30%] h-[90px] border-[#F6F5FF] border-2 bg-[#F7F7F7] flex items-center justify-center relative">
           <img src={image} alt="" width="80%" />
 
-          <div className="btn absolute -top-2 right-0 w-[20px] h-[20px] flex items-center justify-center bg-red-500 text-mainWhite rounded-full">
+          <div
+            className="btn absolute -top-2 right-0 w-[20px] h-[20px] flex items-center justify-center bg-red-500 text-mainWhite rounded-full"
+            onClick={onClick}
+          >
             X
           </div>
         </div>

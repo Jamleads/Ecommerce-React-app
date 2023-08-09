@@ -14,6 +14,7 @@ export default {
         purpple: "#7E33E0",
         mainWhite: "#FFF",
         offWhite: "#F1F1F1",
+        offGreen: "#19D16F",
       },
     },
   },
