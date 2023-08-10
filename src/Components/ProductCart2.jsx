@@ -3,8 +3,6 @@ import { useState } from "react";
 
 const ProductCart2 = ({ image, title, price, onClick }) => {
   const [count, setCount] = useState(1);
-  let singlePrice = price;
-  const totalPrice = count * price;
 
   return (
     <div className="product-card2 flex items-center py-2 border-b-4 border-[#E1E1E4]">
@@ -57,7 +55,7 @@ const ProductCart2 = ({ image, title, price, onClick }) => {
         <div className="w-1/3 text-[#15245E] font-bold">
           ${" "}
           <span className="total-price">
-            {(count * parseFloat(singlePrice)).toFixed(2)}
+            {(count * parseFloat(price)).toFixed(2)}
           </span>
         </div>
       </div>

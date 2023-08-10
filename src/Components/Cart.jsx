@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Shocase from "./Showcase";
 import ProductCart2 from "./ProductCart2";
 import Button from "./Button";
 import { useDispatch } from "react-redux";
 import { remove } from "../store/cartSlice";
+import { clear } from "../store/cartSlice";
 import { toast, ToastContainer } from "react-toastify";
 
 const Cart = () => {
@@ -12,7 +13,6 @@ const Cart = () => {
   console.log(productCart);
 
   const dispatch = useDispatch();
-
   const removeFromCart = (id) => {
     dispatch(remove(id));
     showRemoveToast("Item successfully removed from cart!");
@@ -25,6 +25,23 @@ const Cart = () => {
       hideProgressBar: true,
     });
   };
+
+  const clearCart = () => {
+    dispatch(clear());
+    showClearToast("Cart cleared");
+  };
+
+  const showClearToast = (message) => {
+    toast.success(message, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+  };
+
+  let itemsTotalPrice = 1000;
+  const chargesFee = itemsTotalPrice * 0.02;
+  const checoutTotalPrice = itemsTotalPrice + chargesFee;
 
   return (
     <>
@@ -74,24 +91,24 @@ const Cart = () => {
             <div className="items-total p-5 mt-10 bg-[#F4F4FC]">
               <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  Item's total: <span>(5)</span>
+                  Item's total: <span className="total-items">(0)</span>
                 </p>
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  $<span>4000</span>
+                  $<span>{itemsTotalPrice}</span>
                 </p>
               </div>
 
               <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
-                <p className="lg:text-lg text-[#101750] text-bold">Fees:</p>
+                <p className="lg:text-lg text-[#101750] text-bold">Fees(2%):</p>
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  $<span>10</span>
+                  $<span>{chargesFee}</span>
                 </p>
               </div>
 
               <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
                 <p className="lg:text-lg text-[#101750] text-bold">Total:</p>
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  $<span>4010</span>
+                  $<span>{checoutTotalPrice}</span>
                 </p>
               </div>
 
@@ -100,6 +117,7 @@ const Cart = () => {
               <Button
                 style="w-full bg-[#19D16F] mt-10 mb-5"
                 buttonText="Proceed To Checkout"
+                onClick={() => clearCart()}
               />
             </div>
           </div>
