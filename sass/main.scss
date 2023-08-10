@@ -49,7 +49,9 @@ select {
   cursor: pointer;
   transition: ease-in 0.3s;
 }
-
+.blur {
+  filter: blur(1.8px);
+}
 @media (max-width: 769px) {
   .nav {
     .nav-contact {
