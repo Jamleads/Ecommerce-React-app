@@ -46,18 +46,7 @@ const Carousel = () => {
           collectionDecription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing
           in phasellus non in justo."
         />
-        <CarouselCard />
-        {/* <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard />
-        <CarouselCard /> */}
+        {/* <CarouselCard /> */}
       </Slider>
     </div>
   );
