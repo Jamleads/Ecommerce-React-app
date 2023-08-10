@@ -61,21 +61,6 @@ const Nav = () => {
                 </select>
               </div>
 
-              {/* <div className="user">
-                <p className="text-offWhite text-base">{user}</p>
-              </div> */}
-
-              {/* <div className="submitButton">
-                <SubmitButton
-                  logInOut={UserStore.isLoggedIn ? "Logout" : "Login"}
-                  onClick={
-                    UserStore.isLoggedIn
-                      ? () => this.doLogOut()
-                      : () => this.componentDidMount()
-                  }
-                />
-              </div> */}
-
               <Link to="/wishlist">
                 <div className="favourites flex items-center">
                   <p className="text-offWhite text-base">Wishlist</p>
@@ -103,7 +88,7 @@ const Nav = () => {
         </div>
 
         <div className="nav-links w-full bg-mainWhite py-5">
-          <div className="nav-links-wrap lg:w-[70%] mx-auto flex items-center justify-between">
+          <div className="nav-links-wrap lg:w-[70%] w-[100%] mx-auto flex items-center lg:justify-between">
             <div className="flex items-center">
               <Link to="/">
                 <h1 className="brand-name font-bold text-3xl text-[#0D0E43]">
@@ -133,11 +118,11 @@ const Nav = () => {
               </ul>
             </div>
 
-            <div className="flex items-center border-[1px] border-[#E7E6EF]">
+            <div className="search flex items-center justify-between border-[1px] border-[#E7E6EF]">
               <input
                 type="text"
                 placeholder=""
-                className="bg-transparent py-2 lg:w-[250px] px-5"
+                className="bg-transparent py-2 lg:w-[250px] lg:px-5"
               />
               <div className="w-[40px] h-[40px] bg-pink flex items-center justify-center">
                 <img src={searchIcon} alt="" />

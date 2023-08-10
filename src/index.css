@@ -37,6 +37,9 @@ select:focus {
   cursor: pointer;
   transition: ease-in 0.3s; }
 
+.blur {
+  filter: blur(1.8px); }
+
 @media (max-width: 769px) {
   .nav .nav-contact .nav-contact-wrap {
     width: 100%;
@@ -76,4 +79,17 @@ select:focus {
           width: 270px; }
         .collectionCard .collection-wrap .collection-image-wrap .colection-bolb {
           width: 220px;
-          height: 220px; } }
+          height: 220px; }
+  .search {
+    width: 70%;
+    margin-left: auto; }
+  .footer-top {
+    padding: 20px 0px; }
+    .footer-top .footer-top-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; }
+  .footer-bottom .footer-button-wrap {
+    flex-direction: column;
+    align-items: center; } }

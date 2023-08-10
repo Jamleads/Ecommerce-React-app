@@ -52,6 +52,7 @@ select {
 .blur {
   filter: blur(1.8px);
 }
+
 @media (max-width: 769px) {
   .nav {
     .nav-contact {
@@ -119,6 +120,25 @@ select {
           height: 220px;
         }
       }
+    }
+  }
+  .search {
+    width: 70%;
+    margin-left: auto;
+  }
+  .footer-top {
+    padding: 20px 0px;
+    .footer-top-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  .footer-bottom {
+    .footer-button-wrap {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

@@ -50,7 +50,6 @@ const Cart = () => {
     checkoutBtn.addEventListener("click", () => {
       cartSection.classList.add("blur");
       modal.classList.remove("hidden");
-      clearCart();
     });
   };
 
@@ -69,21 +68,21 @@ const Cart = () => {
     <div className="relative">
       <Shocase pageTitle="Shoping Cart" />
 
-      <section className="cartSection lg:w-[70%] mx-auto mt-32 my-20 lg:flex gap-10">
+      <section className="cartSection lg:w-[70%] mx-auto lg:mt-32 mt-10 my-20 lg:flex gap-10">
         <div className="lg:w-2/3 left">
-          <div className="flex items-center lg:mb-8">
-            <div className="product-side w-2/5 lg:text-lg text-[#101750] font-bold">
+          <div className="flex items-center lg:mb-8 lg:px-0 px-3">
+            <div className="product-side w-2/5 lg:text-lg  text-xs text-[#101750] font-bold">
               Products
             </div>
 
             <div className="price-side w-3/5 flex item-center justify-between text-start">
-              <div className="w-1/3 lg:text-lg text-[#101750] font-bold">
+              <div className="w-1/3 lg:text-lg text-xs text-[#101750] font-bold">
                 Price
               </div>
-              <div className="w-1/3 lg:text-lg text-[#101750] font-bold">
+              <div className="w-1/3 lg:text-lg text-xs text-[#101750] font-bold">
                 Quantity
               </div>
-              <div className="w-1/3 lg:text-lg text-[#101750] font-bold">
+              <div className="w-1/3 lg:text-lg text-xs text-[#101750] font-bold">
                 Total
               </div>
             </div>
@@ -101,16 +100,20 @@ const Cart = () => {
             );
           })}
 
-          <div className="cart-btns flex items-center justify-between mt-10">
+          <div className="cart-btns flex items-center justify-between mt-10 lg:mx-0 mx-3">
             <Link to="/">
-              <Button buttonText="Update Cart" />
+              <Button buttonText="Update Cart" style="lg:text-base text-xs" />
             </Link>
-            <Button buttonText="Clear Cart" onClick={() => clearCart()} />
+            <Button
+              buttonText="Clear Cart"
+              style="lg:text-base text-xs"
+              onClick={() => clearCart()}
+            />
           </div>
         </div>
 
-        <div className="lg:w-1/3">
-          <div className="cart-totals">
+        <div className="lg:w-1/3 lg:mt-0 mt-10">
+          <div className="cart-totals lg:px-0 px-3">
             <h1 className="text-center lg:text-xl  text-[#101750] font-bold">
               Cart Totals
             </h1>
@@ -139,11 +142,12 @@ const Cart = () => {
                 </p>
               </div>
 
-              <Button
-                style="checkoutBtn w-full bg-[#19D16F] mt-10 mb-5"
-                buttonText="Proceed To Checkout"
+              <button
+                className="px-8 py-3 bg-[#19D16F] checkoutBtn w-full mt-10 mb-5 text-mainWhite"
                 onClick={() => chechOut()}
-              />
+              >
+                Proceed To Checkout
+              </button>
             </div>
           </div>
         </div>

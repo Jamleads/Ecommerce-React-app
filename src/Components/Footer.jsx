@@ -10,7 +10,7 @@ const Footer = () => {
     <>
       <div className="footer-top bg-[#EEEFFB]">
         <div className="footer-top-wrap lg:w-[70%] mx-auto lg:py-20 flex justify-between">
-          <div className="lg:w-1/">
+          <div className="text-center">
             <Link to="/">
               <h1 className="brand-name font-bold text-3xl text-[#000000]">
                 Hekto
@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/">
+          <div className="text-center footer-links-wrap">
             <p className="text-[#000000] text-xl font-bold">Catagories</p>
             <ul className="mt-5">
               <a href="#">
@@ -57,7 +57,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="lg:w-1/">
+          <div className="text-center footer-links-wrap">
             <p className="text-[#000000] text-xl font-bold">Customer Care</p>
             <ul className="mt-5">
               <a href="#">
@@ -78,7 +78,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="lg:w-1/">
+          <div className="text-center footer-links-wrap">
             <p className="text-[#000000] text-xl font-bold">Pages</p>
             <ul className="mt-5">
               <a href="#">
