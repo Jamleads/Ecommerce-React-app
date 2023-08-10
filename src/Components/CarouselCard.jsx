@@ -24,7 +24,7 @@ const CarouselCard = ({
             {collectionSubTitle}
           </p>
           <h1 className="collection-title font-bold lg:text-4xl mt-2">
-            {`New ${collectionTitle} Collection Trends in 2020`}
+            {`New ${collectionTitle} Collection Trends in 2023`}
           </h1>
 
           <p className="collection-decription text-xs text-[#8A8FB9] lg:my-5 lg:w-[80%]">
