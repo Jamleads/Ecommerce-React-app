@@ -8,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getProducts } from "../store/productSlice";
 import Footer from "./Footer";
+// import { useHistory } from "react-router-dom";
 
 const Home = () => {
   // const [products, getProduct] = useState([]);
@@ -46,6 +47,7 @@ const Home = () => {
   // const addToFavourite = (product) => {
   //   dispatch(add2(product));
   // };
+  // const history = useHistory([]);
 
   return (
     <div>
@@ -62,6 +64,12 @@ const Home = () => {
                 detailsHeight="h-[150px]"
                 onClickCart={() => addToCart(product)}
                 onClickFavourite={() => addToFavourite(product)}
+                onClickToDetails={() => {
+                  // history.push({
+                  //   pathname: `/product/${product.id}`,
+                  //   state: { product },
+                  // });
+                }}
               />
             </div>
           ))}

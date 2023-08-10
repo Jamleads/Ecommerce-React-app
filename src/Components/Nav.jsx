@@ -30,7 +30,7 @@ const Nav = () => {
                 </div>
               </a>
 
-              <a href="tel:+2349067942127">
+              <a href="tel:+2349067942127" target="_blank">
                 <div className="phone flex items-center">
                   <img src={phoneIcon} alt="phone-icon" />
                   <p className="ml-2 text-base text-offWhite">

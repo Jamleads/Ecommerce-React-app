@@ -2,6 +2,7 @@ import React from "react";
 import favouritesIcon from "/assets/favourite-icon2.svg";
 import cartIcon from "/assets/cart-icon2.svg";
 import magnifyIcon from "/assets/magnify.svg";
+import { Link } from "react-router-dom";
 
 const ProductCard1 = ({
   image,
@@ -14,6 +15,7 @@ const ProductCard1 = ({
   imageHeight,
   onClickCart,
   onClickFavourite,
+  onClickToDetails,
 }) => {
   return (
     <div className={`w-[100%] shadow-lg ${herf} ${style}`}>
@@ -45,6 +47,7 @@ const ProductCard1 = ({
 
       <div
         className={`product-details group flex flex-col items-center justify-center bg-mainWhite hover:bg-[#2F1AC4] ease-in duration-300 lg:px-5 ${detailsHeight}`}
+        onClick={onClickToDetails}
       >
         <h3 className="product-title text-pink text-sm text-center h-[20px] overflow-hidden">
           {title}
