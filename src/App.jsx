@@ -16,6 +16,7 @@ import {
 import Wishlist from "./Components/Wishlist";
 import Cart from "./Components/Cart";
 import RootLayout from "./Components/RootLayout";
+import ProductDetails from "./Components/ProductDetails";
 
 // function App()
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Route index element={<Home />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
-        <Route></Route>
+        <Route path="/productDetails" element={<ProductDetails />}></Route>
         <Route></Route>
       </Route>
     )

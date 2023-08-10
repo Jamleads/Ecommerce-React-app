@@ -113,22 +113,22 @@ const Nav = () => {
 
               <ul className="nav-lists flex items-center gap-5 ml-20 text-{#0D0E43}">
                 <li>
-                  <Link href="/">Home</Link>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link href="/pages">Pages</Link>
+                  <Link to="/pages">Pages</Link>
                 </li>
                 <li>
-                  <Link href="/products">Product</Link>
+                  <Link to="/productDetails">Product</Link>
                 </li>
                 <li>
-                  <Link href="/blog">Blog</Link>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/shop">Shop</Link>
+                  <Link to="/shop">Shop</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

@@ -43,10 +43,6 @@ const Cart = () => {
     });
   };
 
-  let itemsTotalPrice = 1000;
-  const chargesFee = itemsTotalPrice * 0.02;
-  const checoutTotalPrice = itemsTotalPrice + chargesFee;
-
   const chechOut = () => {
     const modal = document.querySelector(".modal");
     const cartSection = document.querySelector(".cartSection");
@@ -54,8 +50,20 @@ const Cart = () => {
     checkoutBtn.addEventListener("click", () => {
       cartSection.classList.add("blur");
       modal.classList.remove("hidden");
+      clearCart();
     });
   };
+
+  let [itemsTotalPrice, setItemsTotalPrice] = useState(0);
+  const chargesFee = itemsTotalPrice * 0.02;
+  const checoutTotalPrice = itemsTotalPrice + chargesFee;
+  useEffect(() => {
+    let _total = 0;
+    for (let i = 0; i < productCart.length; i++) {
+      _total = _total + Number(productCart[i]?.price);
+      setItemsTotalPrice(_total);
+    }
+  }, []);
 
   return (
     <div className="relative">
@@ -81,16 +89,19 @@ const Cart = () => {
             </div>
           </div>
 
-          {productCart.map((product) => (
-            <div key={product.id}>
-              <ProductCart2
-                {...product}
-                onClick={() => removeFromCart(product.id)}
-              />
-            </div>
-          ))}
+          {productCart.map((product) => {
+            return (
+              <div key={product.id}>
+                <ProductCart2
+                  {...product}
+                  onClick={() => removeFromCart(product.id)}
+                  setItemsTotalPrice={setItemsTotalPrice}
+                />
+              </div>
+            );
+          })}
 
-          <div className="cart-btns flex items-center justify-between my-5">
+          <div className="cart-btns flex items-center justify-between mt-10">
             <Link to="/">
               <Button buttonText="Update Cart" />
             </Link>
@@ -110,21 +121,21 @@ const Cart = () => {
                   Item's total: <span className="total-items">(0)</span>
                 </p>
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  $<span>{itemsTotalPrice}</span>
+                  $<span>{itemsTotalPrice.toFixed(2)}</span>
                 </p>
               </div>
 
               <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
                 <p className="lg:text-lg text-[#101750] text-bold">Fees(2%):</p>
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  $<span>{chargesFee}</span>
+                  $<span>{chargesFee.toFixed(2)}</span>
                 </p>
               </div>
 
               <div className="flex items-center justify-between py-5 border-b-2 border-[#E8E6F1]">
                 <p className="lg:text-lg text-[#101750] text-bold">Total:</p>
                 <p className="lg:text-lg text-[#101750] text-bold">
-                  $<span>{checoutTotalPrice}</span>
+                  $<span>{checoutTotalPrice.toFixed(2)}</span>
                 </p>
               </div>
 

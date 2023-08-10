@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
-const ProductCart2 = ({ image, title, price, onClick }) => {
+const ProductCart2 = ({ image, title, price, onClick, setItemsTotalPrice }) => {
   const [count, setCount] = useState(1);
+
+  function increasement() {
+    setCount((count) => count + 1);
+    setItemsTotalPrice((prev) => {
+      return prev + Number(price);
+    });
+  }
+
+  function decreasement() {
+    if (count <= 1) return;
+    setCount((count) => count - 1);
+    setItemsTotalPrice((prev) => prev - Number(price));
+  }
 
   return (
     <div className="product-card2 flex items-center py-2 border-b-4 border-[#E1E1E4]">
@@ -36,17 +49,11 @@ const ProductCart2 = ({ image, title, price, onClick }) => {
 
         <div className="w-1/3 quantity">
           <div className="lg:w-[50%] w-full flex items-center justify-between bg-[#F0EFF2] px-2">
-            <p
-              className="btn active:bg-pink"
-              onClick={() => count > 1 && setCount((count) => count - 1)}
-            >
+            <p className="btn active:bg-pink" onClick={decreasement}>
               -
             </p>
             <span className="border-x-[1px] px-2">{count}</span>
-            <p
-              className="btn active:bg-pink"
-              onClick={() => setCount((count) => count + 1)}
-            >
+            <p className="btn active:bg-pink" onClick={increasement}>
               +
             </p>
           </div>
