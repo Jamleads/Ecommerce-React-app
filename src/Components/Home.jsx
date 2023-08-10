@@ -7,6 +7,7 @@ import { add } from "../store/cartSlice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getProducts } from "../store/productSlice";
+import Footer from "./Footer";
 
 const Home = () => {
   // const [products, getProduct] = useState([]);
@@ -67,6 +68,7 @@ const Home = () => {
         </div>
       </div>
 
+      <Footer />
       <ToastContainer />
     </div>
   );

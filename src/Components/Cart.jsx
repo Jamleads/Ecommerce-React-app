@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import clockImg from "/assets/clock-icon.svg";
 import checklist from "/assets/checklist.svg";
 import checked from "/assets/check-mark-icon.svg";
+import Footer from "./Footer";
 
 const Cart = () => {
   const productCart = useSelector((state) => state.cart);
@@ -60,7 +61,7 @@ const Cart = () => {
     <div className="relative">
       <Shocase pageTitle="Shoping Cart" />
 
-      <section className="cartSection lg:w-[70%] mx-auto mt-32 lg:flex gap-10">
+      <section className="cartSection lg:w-[70%] mx-auto mt-32 my-20 lg:flex gap-10">
         <div className="lg:w-2/3 left">
           <div className="flex items-center lg:mb-8">
             <div className="product-side w-2/5 lg:text-lg text-[#101750] font-bold">
@@ -160,6 +161,7 @@ const Cart = () => {
         </div>
       </div>
 
+      <Footer />
       <ToastContainer />
     </div>
   );
