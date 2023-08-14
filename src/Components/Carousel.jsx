@@ -19,14 +19,6 @@ const Carousel = () => {
     cssEase: "linear",
   };
 
-  // const [product, getProduct] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("https://fakestoreapi.com/products/category/jewelery")
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
-
   return (
     <div className="w-full lg:h-[65vh]">
       <Slider {...settings} className="bg-[#F2F0FF]">
