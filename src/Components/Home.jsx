@@ -8,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getProducts } from "../store/productSlice";
 import Footer from "./Footer";
+import { addToFavSlice } from "../store/favouriteSlice";
 // import { useHistory } from "react-router-dom";
 
 const Home = () => {
@@ -29,7 +30,6 @@ const Home = () => {
   // Add to cart function
   const dispatch = useDispatch();
   const addToCart = (product) => {
-    // dispatch an add action
     dispatch(add(product));
     showAddToast("Item successfully added to cart!");
   };
@@ -44,9 +44,12 @@ const Home = () => {
   };
 
   // Add to favourites
-  // const addToFavourite = (product) => {
-  //   dispatch(add2(product));
-  // };
+  const addToFavourite = (product) => {
+    dispatch(addToFavSlice(product));
+    console.log("its working");
+    showAddToast("Item added to Whishlists");
+  };
+
   // const history = useHistory([]);
 
   return (

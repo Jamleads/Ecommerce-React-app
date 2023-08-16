@@ -4,11 +4,11 @@ const favouriteSlice = createSlice({
   name: "Favourites",
   initialState: [],
   reducers: {
-    add(state, action) {
+    addToFavSlice(state, action) {
       state.push(action.payload);
     },
   },
 });
 
-export const { add } = favouriteSlice.actions;
+export const { addToFavSlice } = favouriteSlice.actions;
 export default favouriteSlice.reducer;

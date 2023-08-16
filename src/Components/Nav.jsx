@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 
 const Nav = () => {
   const cartProducts = useSelector((state) => state.cart);
+  const favouritesProducts = useSelector((state) => state.favourite);
 
   return (
     <>
@@ -64,11 +65,18 @@ const Nav = () => {
               <Link to="/wishlist">
                 <div className="favourites flex items-center">
                   <p className="text-offWhite text-base">Wishlist</p>
-                  <img
-                    src={favouritesIcon}
-                    alt="favourites-Icon"
-                    className="lg:ml-2"
-                  />
+                  <div className="relative h-full w-[30px] flex items-center justify-center">
+                    <p className="absolute -top-2 right-0 px-1 ml-2 text-pink text-xs bg-[#2F1AC4] font-bold ">
+                      {!favouritesProducts.length >= 1
+                        ? ""
+                        : favouritesProducts.length}
+                    </p>
+                    <img
+                      src={favouritesIcon}
+                      alt="favourites-Icon"
+                      className="lg:ml-2"
+                    />
+                  </div>
                 </div>
               </Link>
 
