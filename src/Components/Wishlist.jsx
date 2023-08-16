@@ -1,6 +1,9 @@
 import React from "react";
+import ProductDetailsCard from "./ProductDetailsCard";
+import { useSelector } from "react-redux";
 
 const Wishlist = () => {
+  const productsFavourites = useSelector((state) => state.favourite);
   return (
     <div>
       <h2>
@@ -12,6 +15,14 @@ const Wishlist = () => {
           This is the Wishlist Product page
         </p>
       </h2>
+
+      {productsFavourites.map((product) => {
+        return (
+          <div key={product.id}>
+            <ProductDetailsCard {...product} />
+          </div>
+        );
+      })}
     </div>
   );
 };
