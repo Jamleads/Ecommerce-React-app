@@ -14,6 +14,7 @@ const ProductDetailsCard = ({
   price,
   description,
   category,
+  favStyle,
 }) => {
   return (
     <div className="lg:w-[75%] lg:flex items-center gap-5 p-5 mx-auto bg-mainWhite shadow-xl">
@@ -56,7 +57,7 @@ const ProductDetailsCard = ({
           </button>
 
           <div
-            className="favourite-btn h-[30px] ml-5 w-[30px] flex items-center justify-center rounded-full"
+            className={`${favStyle} favourite-btn h-[30px] ml-5 w-[30px] flex items-center justify-center rounded-full`}
             onClick={() => {}}
           >
             <img src={favouritesIcon} alt="favourite-icon" width="100%" />
