@@ -43,14 +43,13 @@ const Cart = () => {
     });
   };
 
+  const modal = document.querySelector(".modal");
+  const cartSection = document.querySelector(".cartSection");
+  const checkoutBtn = document.querySelector(".checkoutBtn");
   const chechOut = () => {
-    const modal = document.querySelector(".modal");
-    const cartSection = document.querySelector(".cartSection");
-    const checkoutBtn = document.querySelector(".checkoutBtn");
-    checkoutBtn.addEventListener("click", () => {
-      cartSection.classList.add("blur");
-      modal.classList.remove("hidden");
-    });
+    cartSection.classList.add("blur");
+    modal.classList.remove("hidden");
+    clearCart();
   };
 
   let [itemsTotalPrice, setItemsTotalPrice] = useState(0);
