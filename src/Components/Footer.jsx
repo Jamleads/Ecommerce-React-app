@@ -5,9 +5,9 @@ import gitIcon from "/assets/Github.svg";
 import linkedinIcon from "/assets/Linkedin.svg";
 import twitterIcon from "/assets/Twitter.svg";
 
-const Footer = () => {
+const Footer = ({ style }) => {
   return (
-    <>
+    <div className={`${style}`}>
       <div className="footer-top bg-[#EEEFFB]">
         <div className="footer-top-wrap lg:w-[70%] mx-auto lg:py-20 flex justify-between">
           <div className="text-center">
@@ -133,7 +133,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

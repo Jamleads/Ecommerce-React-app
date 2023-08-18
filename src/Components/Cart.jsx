@@ -87,17 +87,29 @@ const Cart = () => {
             </div>
           </div>
 
-          {productCart.map((product) => {
-            return (
-              <div key={product.id}>
-                <ProductCart2
-                  {...product}
-                  onClick={() => removeFromCart(product.id)}
-                  setItemsTotalPrice={setItemsTotalPrice}
-                />
-              </div>
-            );
-          })}
+          {/* {productCart.length ? } */}
+
+          {productCart.length ? (
+            productCart.map((product) => {
+              return (
+                <div key={product.id}>
+                  <ProductCart2
+                    {...product}
+                    onClick={() => removeFromCart(product.id)}
+                    setItemsTotalPrice={setItemsTotalPrice}
+                  />
+                </div>
+              );
+            })
+          ) : (
+            <p className="text-center text-navyBlue lg:text-2xl py-10">
+              Cart is empty. click{" "}
+              <Link to="/" className="text-pint font-bold">
+                Here
+              </Link>{" "}
+              to see avaliable products
+            </p>
+          )}
 
           <div className="cart-btns flex items-center justify-between mt-10 lg:mx-0 mx-3">
             <Link to="/">

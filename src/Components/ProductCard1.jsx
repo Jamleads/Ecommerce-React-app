@@ -16,6 +16,7 @@ const ProductCard1 = ({
   onClickCart,
   onClickFavourite,
   onClickToDetails,
+  onClickMagnify,
 }) => {
   return (
     <div className={`w-[100%] shadow-lg ${herf} ${style}`}>
@@ -39,7 +40,10 @@ const ProductCard1 = ({
             <img src={favouritesIcon} alt="favourite-icon2" />
           </div>
 
-          <div className="magnify-btn h-[30px] w-[30px] flex items-center justify-center rounded-full hover:bg-pink ease-in duration-300">
+          <div
+            className="magnify-btn h-[30px] w-[30px] flex items-center justify-center rounded-full hover:bg-pink ease-in duration-300"
+            onClick={onClickMagnify}
+          >
             <img src={magnifyIcon} alt="magnify-icon" />
           </div>
         </div>
