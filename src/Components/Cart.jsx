@@ -11,6 +11,7 @@ import clockImg from "/assets/clock-icon.svg";
 import checklist from "/assets/checklist.svg";
 import checked from "/assets/check-mark-icon.svg";
 import Footer from "./Footer";
+import MyLottieAnimation from "./MyLottieAnimation";
 
 const Cart = () => {
   const productCart = useSelector((state) => state.cart);
@@ -102,13 +103,17 @@ const Cart = () => {
               );
             })
           ) : (
-            <p className="text-center text-navyBlue lg:text-2xl py-10">
-              Cart is empty. click{" "}
-              <Link to="/" className="text-pint font-bold">
-                Here
-              </Link>{" "}
-              to see avaliable products
-            </p>
+            <div>
+              <MyLottieAnimation />
+
+              <p className="text-center text-navyBlue lg:text-2xl py-10">
+                Cart is empty. click{" "}
+                <Link to="/" className="text-pink font-bold">
+                  Here
+                </Link>{" "}
+                to see avaliable products
+              </p>
+            </div>
           )}
 
           <div className="cart-btns flex items-center justify-between mt-10 lg:mx-0 mx-3">
