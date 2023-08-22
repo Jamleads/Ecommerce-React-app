@@ -111,7 +111,7 @@ const Cart = () => {
                 <Link to="/" className="text-pink font-bold">
                   Here
                 </Link>{" "}
-                to see avaliable products
+                to see products
               </p>
             </div>
           )}
